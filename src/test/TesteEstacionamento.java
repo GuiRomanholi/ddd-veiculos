@@ -10,11 +10,11 @@ public class TesteEstacionamento {
         veicSeg.setValorHora(5);
         veicSeg.setValorAdicional(2);
         veicSeg.setHoras(0);
-
-
-        System.out.println(veicSeg.doViewCupom());
+        veicSeg.doViewCupom();
 
         BalacoDiario bd = new BalacoDiario();
-
+        //adicionando o objeto na lista
+        bd.doAdd(veicSeg);
+        System.out.printf(bd.doGerarRelatorio());
     }
 }

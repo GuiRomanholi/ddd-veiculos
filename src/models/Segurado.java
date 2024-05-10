@@ -5,17 +5,19 @@ public class Segurado extends Veiculo implements ISeguroServico {
 
     //metodos
     public Segurado(double seguro){
-
     }
 
+
+    @Override
     public double doTotal(){
         return super.doTotal() - doDesconto();
     }
 
     public String doViewCupom(){
-        System.out.println("Esse é o seu desconto no total: " + doTotal());
-        System.out.println("Esse é o seu seguro: " + seguro);
-        return "Aqui está o cupom";
+        return "Aqui está o cupom" +
+                "\n------------------" +
+                "\nHoras estacionado: " + this.getHoras() +
+                "\nValor total com desconto: " + this.doTotal();
     }
 
 
@@ -30,6 +32,5 @@ public class Segurado extends Veiculo implements ISeguroServico {
     //metodo
     @Override
     public double doDesconto() {
-        return super.doTotal()* seguro/100;
-    }
+        return super.doTotal()* seguro/100;}
 }

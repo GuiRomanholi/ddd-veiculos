@@ -6,6 +6,10 @@ public class Veiculo {
     private double horas;
 
     //Metodos
+    /**
+     * O metodo de retornar o valor
+     * Foi criado a variavel valor
+     */
     double valor;
     public double doTotal(){
         valor = valorHora + valorAdicional * (horas - 1);
@@ -14,8 +18,10 @@ public class Veiculo {
     }
 
     public String doViewCupom(){
-        System.out.println("Suas horas são: " + getHoras());
-        return "Aqui está o cupom";
+        return "Aqui está o cupom" +
+                "\n------------------" +
+                "\nHoras estacionado: " + this.horas +
+                "\nValor total: " + this.doTotal();
     }
 
     //Getters e setters
